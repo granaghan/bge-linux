@@ -1,0 +1,42 @@
+register I2CCTL 0x00
+field READ 1
+field NULL 3
+field CLEAR 2
+field NULL 1
+field ST 1
+field INTD 1
+field INTT 1
+field INTR 1
+field NULL 4
+field I2CEN 1
+
+register I2CSTATUS 0x4
+field TA 1
+field DONE 1
+field TXW 1
+field RXR 1
+field TXD 1
+field RXD 1
+field TXE 1
+field RXF 1
+field ERR 1
+field CLKT 1
+
+register I2CDLEN 0x8
+field DLEN 16
+
+register I2CADDR 0xC
+field ADDR 7
+
+register I2CFIFO 0x10
+field DATA 8
+
+register I2CDIV 0x14
+field CDIV 16
+
+register I2CDEL 0x18
+field REDL 16
+field FEDL 16
+
+register I2CCLKT 0x1C
+field TOUT 16

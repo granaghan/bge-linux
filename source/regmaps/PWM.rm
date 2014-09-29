@@ -1,0 +1,53 @@
+register CTL 0x00
+field PWEN1 1
+field MODE1 1
+field RPTL1 1
+field SBIT1 1
+field POLA1 1
+field USEF1 1
+field CLRF1 1
+field MSEN1 1
+field PWEN2 1
+field MODE2 1
+field RPTL2 1
+field SBIT2 1
+field POLA2 1
+field USED2 1
+field NULL 1
+field MSEN2 1
+
+register STA 0x04
+field FULL1 1
+field EMPT1 1
+field WERR1 1
+field RERR1 1
+field GAPO1 1
+field GAPO2 1
+field GAPO3 1
+field GAPO4 1
+field BERR 1
+field STA1 1
+field STA2 1
+field STA3 1
+field STA4 1
+
+register DMAC 0x08
+field DREQ 8
+field PANIC 8
+field NULL 15
+field ENAB 1
+
+register RNG1 0x10
+field PWM_RNG 32
+
+register DAT1 0x14
+field PWM_DAT 32
+
+register FIF1 0x18
+field PWM_FIFO 32
+
+register RNG2 0x20
+field PWM_RNG 32
+
+register DAT2 0x24
+field PWM_DAT 32

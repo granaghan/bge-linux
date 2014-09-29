@@ -1,0 +1,57 @@
+register GPFSEL0 0x00
+
+register GPFSEL1 0x04
+
+register GPFSEL2 0x08
+
+register GPFSEL3 0x0C
+
+register GPFSEL4 0x10
+
+register GPFSEL5 0x14
+
+register GPSET0 0x1C
+
+register GPSET1 0x20
+
+register GPCLR0 0x28
+
+register GPCLR1 0x2C
+
+register GPLEV0 0x34
+
+register GPLEV1 0x38
+
+register GPEDS0 0x40
+
+register GPEDS1 0x44
+
+register GPREN0 0x4C
+
+register GPREN1 0x50
+
+register GPFEN0 0x58
+
+register GPFEN1 0x5C
+
+register GPHEN0 0x64
+
+register GPHEN1 0x68
+
+register GPLEN0 0x70
+
+register GPLEN1 0x74
+
+register GPAREN0 0x7C
+
+register GPAREN1 0x80
+
+register GPAFEN0 0x88
+
+register GPAFEN1 0x8C
+
+register GPPUD 0x94
+
+register GPPUDCLK0 0x98
+
+register GPPUDCLK1 0x9C

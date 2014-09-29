@@ -1,0 +1,23 @@
+register SYSTIMER_CS 0x00
+field M0 1
+field M1 1
+field M2 1
+field M3 1
+
+register CLO 0x04
+field CNT 32
+
+register CHI 0x08
+field CNT 32
+
+register C0 0x0C
+field CMP 32
+
+register C1 0x10
+field CMP 32
+
+register C2 0x14
+field CMP 32
+
+register C3 0x18
+field CMP 32

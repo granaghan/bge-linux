@@ -1,0 +1,140 @@
+register DR 0x0
+field Data 8
+field FE 1
+field PE 1
+field BE 1
+field OE 1
+
+register RSRECR 0x4
+field FE 1
+field PE 1
+field BE 1
+field OE 1
+
+register FR 0x18
+field CTS 1
+field DSR 1
+field DCD 1
+field Busy 1
+field RXFE 1
+field TXFF 1
+field RXFF 1
+field TXFE 1
+field RI 1
+
+register IBRD 0x24
+field IBRD 16
+
+register FBRD 0x28
+field FBRD 6
+
+register LCRH 0x2C
+field BRK 1
+field PEN 1
+field EPS 1
+field STP2 1
+field FEN 1
+field WLEN 2
+field SPS 1
+
+register CR 0x30
+field UARTEN 1
+field SIREN 1
+field SIRPL 1
+field NULL 4
+field LBE 1
+field TXE 1
+field RXE 1
+field DTR 1
+field RTS 1
+field OUT1 1
+field OUT2 1
+field RTSEN 1
+field CTSEN 1
+
+register IFLS 0x34
+field TXIFLSEL 3
+field RXIFLSEL 3
+field TXIFPSEL 3
+field RXIFPSEL 3
+
+register IMSC 0x38
+field RIMIM 1
+field CTSMIM 1
+field DCDMIM 1
+field DSRMIM 1
+field RXIM 1
+field TXIM 1
+field RTIM 1
+field FEIM 1
+field PEIM 1
+field BEIM 1
+field OEIM 1
+
+register RIS 0x3c
+field RIRMIS 1
+field CTSRMIS 1
+field DCDRMIS 1
+field DSRRMIS 1
+field RXRIS 1
+field TXRIS 1
+field RTRIS 1
+field FERIS 1
+field PERIS 1
+field BERIS 1
+field OERIS 1
+
+register MIS 0x40
+field RIRMIS 1
+field CTSRMIS 1
+field DCDRMIS 1
+field DSRRMIS 1
+field RXRIS 1
+field TXRIS 1
+field RTRIS 1
+field FERIS 1
+field PERIS 1
+field BERIS 1
+field OERIS 1
+
+register ICR 0x44
+field RIMIC 1
+field CTSMIC 1
+field DCDMIC 1
+field DSRMIC 1
+field RXIC 1
+field TXIC 1
+field RTIC 1
+field FEIC 1
+field PEIC 1
+field BEIC 1
+field OEIC 1
+
+register DMACR 0x48
+field RXDMAE 1
+field TXDMAE 1
+field DMAONERR 1
+
+register ITCR 0x80
+field ITCR0 1
+field ITCR1 1
+
+register ITIP 0x84
+field ITIP0 1
+field NULL 3
+field ITIP 1
+
+register ITOP 0x88
+field ITOP0 1
+field NULL 2
+field ITIP 1
+field NULL 2
+field ITIP6 1
+field ITOP7 1
+field ITOP8 1
+field ITOP9 1
+field ITOP10 1
+field ITOP11 1
+
+register TDR 0x8C
+field TDR10_0 11

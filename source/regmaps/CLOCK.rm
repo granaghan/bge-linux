@@ -1,0 +1,12 @@
+register CLKCTL 0x0
+field SRC 4
+field ENAB 1
+field KILL 1
+field NULL 1
+field BUSY 1
+field FLIP 1
+field MASH 2
+
+register CLKDIV 0x4
+field DIVF 12
+field DIVI 12

@@ -1,0 +1,46 @@
+register CS 0x00
+field CS 2
+field CPHA 1
+field CPOL 1
+field CLEAR 2
+field CSPOL 1
+field TA 1
+field DMAEN 1
+field INTD 1
+field INTR 1
+field ADCS 1
+field REN 1
+field LEN 1
+field NULL 2
+field DONE 1
+field RXD 1
+field TXD 1
+field RXR 1
+field RXF 1
+field CSPOL0 1
+field CSPOL1 1
+field CSPOL2 1
+field DMA_LEN 1
+field LEN_LONG 1
+field NULL 6
+
+register FIFO 0x04
+field Data 32
+
+register CLK 0x08
+field ClockDivider 16
+field NULL 16
+
+register DLEN 0x0C
+field DataLength 16
+field NULL 16
+
+register LTOH 0x10
+field TOH 4
+field NULL 28
+
+register DC 0x14
+field TDREQ 8
+field TPANIC 8
+field RDREQ 8
+field RPANIC 8
