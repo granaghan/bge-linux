@@ -2,7 +2,6 @@
 #define DRIVERS_PWM_H_
 
 #include <codegen/PWM.h>
-#include <FreeRTOSConfig.h>
 #include <stdint.h>
 
 class PWM

@@ -2,7 +2,6 @@
 #define DRIVERS_CLOCK_H_
 
 #include <codegen/CLOCK.h>
-#include <FreeRTOSConfig.h>
 #include <stdint.h>
 
 class Clock

@@ -2,7 +2,6 @@
 #define DRIVERS_SYSTEMTIMER_H_
 
 #include <codegen/SYSTIMER.h>
-#include <FreeRTOSConfig.h>
 #include <stdint.h>
 
 class SystemTimer

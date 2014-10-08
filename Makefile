@@ -23,7 +23,8 @@ ifeq ($($(basename $(notdir $1))_WRITEFUNC),)
 $(basename $(notdir $1))_WRITEFUNC:=write32
 endif
 ARM_SRC+=$(CODEGEN_DIR)/$(basename $(notdir $1)).c
-codegen:$(CODEGEN_DIR)/$(basename $(notdir $1)).c $(CODEGEN_DIR)/$(basename $(notdir $1)).h
+codegen:$(CODEGEN_DIR)/$(basename $(notdir $1)).c
+codegen:$(CODEGEN_DIR)/$(basename $(notdir $1)).h
 $(CODEGEN_DIR)/$(basename $(notdir $1)).c:$1
 	@echo $(notdir $$@) \<-- $(notdir $$<)
 	@$(PYTHON) source/regmaps/RegMapParse.py $$< | python source/regmaps/GenerateRegisterMap.py --include "io.h" --read_func $$($(basename $(notdir $1))_READFUNC) --write_func $$($(basename $(notdir $1))_WRITEFUNC) > $$@
@@ -36,7 +37,7 @@ endef
 # CFLAGS common to both the THUMB and ARM mode builds
 #
 CFLAGS=-Wall -Wextra -Isource/FreeRTOS/Source/include \
-		-Isource -I. $(DEBUG) -lboost_thread-mt -march=armv6 -mfpu=vfp -mfloat-abi=hard \
+		-Isource -I. $(DEBUG) -lboost_thread-mt -lboost_system -march=armv6 -mfpu=vfp -mfloat-abi=hard \
 		-g -fno-dwarf2-cfi-asm -O0
 
       #-Wcast-align $(OPTIM)
@@ -68,6 +69,9 @@ ARM_CPP_SRC :=\
    source/Peripherals/SparkfunLCD.cpp \
    source/Peripherals/MAX31855.cpp \
    source/tasks.cpp \
+   source/DataOutputComposite.cpp \
+   source/NamedPipeDataOutput.cpp \
+   source/SocketDataOutput.cpp \
 
 ARM_SRC := \
    source/Drivers/interrupts.c \

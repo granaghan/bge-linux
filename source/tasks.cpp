@@ -7,6 +7,9 @@ extern "C"
 #include <queue>
 #include <boost/thread.hpp>
 #include <boost/date_time.hpp>
+#include "DataOutputComposite.h"
+#include "NamedPipeDataOutput.h"
+#include "SocketDataOutput.h"
 #include "PID.h"
 #include "Drivers/Clock.h"
 #include "Drivers/GPIO.h"
@@ -199,7 +202,7 @@ extern "C" void task1(void *pParam)
    }
 }
 
-extern "C" void taskBlink(void *pParam)
+extern "C" void taskBlink(void *)
 {
    boost::posix_time::milliseconds sleepTime(500);
    GPIO& gpio = GPIO::getSingleton();
@@ -235,6 +238,12 @@ extern "C" void task3(void *pParam)
    std::queue<float>& temperatureQueue = reinterpret_cast<TaskStruct*>(pParam)->temperatureQueueHandle;
    std::queue<uint32_t>& fanLevelQueue = reinterpret_cast<TaskStruct*>(pParam)->fanLevelQueueHandle;
 
+   DataOutputComposite dataOutputComposite;
+   //NamedPipeDataOutput dataPipe("/tmp/myfifo");
+   SocketDataOutput socketOutput;
+   //dataOutputComposite.add(dataPipe);
+   dataOutputComposite.add(socketOutput);
+
    I2C i2c(i2cMappedBase);
 
 
@@ -246,7 +255,7 @@ extern "C" void task3(void *pParam)
    i2c.clearFIFO();
    i2c.enable();
 
-   uint32_t temperature = 0;
+   float temperature = 0;
    uint32_t fanLevel = 0;
    uint64_t timeElapsed;
    char strBuffer[48];
@@ -263,8 +272,9 @@ extern "C" void task3(void *pParam)
       {
          temperature = temperatureQueue.back();
          temperatureQueue.pop();
+         dataOutputComposite.setTemperature(temperature);
          lcd.setCursorPosition(1);
-         snprintf(strBuffer, 48, "%d", temperature);
+         snprintf(strBuffer, 48, "%f", temperature);
          //lcd.clear();
          lcd.sendString(strBuffer);
       }
@@ -292,10 +302,13 @@ extern "C" void task3(void *pParam)
       {
          snprintf(strBuffer, 48, " %d", i2c.read());
          //lcd.sendString(strBuffer);
+         //printf("I2C: %s\n", strBuffer);
       }
       if(i2c.ackErrorDetected())
       {
          lcd.sendString(" ack error");
       }
+
+      dataOutputComposite.send();
    }
 }

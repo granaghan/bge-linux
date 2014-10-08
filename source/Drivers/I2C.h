@@ -2,7 +2,6 @@
 #define DRIVERS_I2C_H_
 
 #include <codegen/I2C.h>
-#include <FreeRTOSConfig.h>
 #include <stdint.h>
 
 class I2C

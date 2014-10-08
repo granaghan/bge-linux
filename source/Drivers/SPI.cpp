@@ -1,6 +1,5 @@
 #include "Drivers/SPI.h"
 #include <codegen/SPI.h>
-#include <FreeRTOSConfig.h>
 #include <stdint.h>
 
 uint8_t* const SPI::SPI0BaseAddress = (uint8_t* const)0x20204000;
