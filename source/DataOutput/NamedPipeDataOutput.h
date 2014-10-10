@@ -1,7 +1,7 @@
 #ifndef NAMEDPIPEDATAOUTPUT_H_
 #define NAMEDPIPEDATAOUTPUT_H_
 
-#include "DataOutput.h"
+#include "DataOutput/DataOutput.h"
 
 class NamedPipeDataOutput: public virtual DataOutput
 {

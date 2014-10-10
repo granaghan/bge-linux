@@ -93,6 +93,8 @@ static void stubHandler(int nIRQ, void *pParam) {
 	 *	otherwise we could lock up this system, as there is nothing to
 	 *	ackknowledge the interrupt.
 	 **/
+	 nIRQ = nIRQ;
+	 pParam = pParam;
 }
 
 int InitInterruptController() {

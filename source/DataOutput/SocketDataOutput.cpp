@@ -1,4 +1,4 @@
-#include "SocketDataOutput.h"
+#include "DataOutput/SocketDataOutput.h"
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -34,7 +34,7 @@ void SocketDataOutput::send()
    if(newData)
    {
       char str[255] = "";
-      sprintf(str, "{\"date\":%d, \"temperature\":%lf}\n", time(NULL), temperature);
+      sprintf(str, "{\"date\":%ud, \"temperature\":%lf}\n", static_cast<unsigned int>(time(NULL)), temperature);
       socket.send_to(boost::asio::buffer(str, strlen(str)), remote_endpoint);
       newData = false;
    }

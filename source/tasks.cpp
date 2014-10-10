@@ -7,9 +7,9 @@ extern "C"
 #include <queue>
 #include <boost/thread.hpp>
 #include <boost/date_time.hpp>
-#include "DataOutputComposite.h"
-#include "NamedPipeDataOutput.h"
-#include "SocketDataOutput.h"
+#include "DataOutput/DataOutputComposite.h"
+#include "DataOutput/NamedPipeDataOutput.h"
+#include "DataOutput/SocketDataOutput.h"
 #include "PID.h"
 #include "Drivers/Clock.h"
 #include "Drivers/GPIO.h"

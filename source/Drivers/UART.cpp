@@ -83,8 +83,6 @@ void UART::enableReceive(uint8_t enable)
 
 void UART::sendByte(uint8_t data)
 {
-   GPIO& gpio = GPIO::getSingleton();
-   uint32_t i = 0;
    while(readFR_TXFF(baseAddress));
    writeDR_Data(baseAddress, data);
 }

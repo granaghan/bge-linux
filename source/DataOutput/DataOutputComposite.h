@@ -1,7 +1,7 @@
 #ifndef DATAOUTPUTCOMPOSITE_H_
 #define DATAOUTPUTCOMPOSITE_H_
 
-#include "DataOutput.h"
+#include "DataOutput/DataOutput.h"
 #include <vector>
 
 class DataOutputComposite: public virtual DataOutput

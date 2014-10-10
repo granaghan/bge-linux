@@ -1,7 +1,7 @@
 #ifndef SOCKETDATAOUTPUT_H_
 #define SOCKETDATAOUTPUT_H_
 
-#include "DataOutput.h"
+#include "DataOutput/DataOutput.h"
 #include <boost/asio.hpp>
 
 class SocketDataOutput: public virtual DataOutput

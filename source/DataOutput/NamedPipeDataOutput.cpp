@@ -1,4 +1,4 @@
-#include "NamedPipeDataOutput.h"
+#include "DataOutput/NamedPipeDataOutput.h"
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -27,6 +27,6 @@ void NamedPipeDataOutput::setTemperature(float temperature)
 void NamedPipeDataOutput::send()
 {
    char str[255] = "";
-   sprintf(str, "{\"date\":%d, \"temperature\":%lf}\n", time(NULL), temperature);
+   sprintf(str, "{\"date\":%ud, \"temperature\":%lf}\n", static_cast<unsigned int>(time(NULL)), temperature);
    write(fd, str, strlen(str));
 }

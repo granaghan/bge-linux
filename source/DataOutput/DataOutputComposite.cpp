@@ -1,4 +1,4 @@
-#include "DataOutputComposite.h"
+#include "DataOutput/DataOutputComposite.h"
 
 DataOutputComposite::DataOutputComposite()
 {}
